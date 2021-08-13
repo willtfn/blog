@@ -49,16 +49,11 @@ module.exports = {
     },
     subSidebar: "auto",
     sidebar: {
+      "/blogs/git/": ["", "api"],
       "/blogs/npm/": ["", "api", "dev"],
     },
     type: "blog",
     friendLink: [
-      // {
-      //   "title": "午后南杂",
-      //   "desc": "Enjoy when you can, and endure when you must.",
-      //   "email": "1156743527@qq.com",
-      //   "link": "https://www.recoluan.com"
-      // },
       // {
       //   "title": "vuepress-theme-reco",
       //   "desc": "A simple and beautiful vuepress Blog & Doc theme.",
@@ -73,7 +68,7 @@ module.exports = {
     author: "lixiang",
     authorAvatar: "/avatar.jpg",
     record: "xxxx",
-    startYear: "2021",
+    startYear: "2019",
   },
   markdown: {
     lineNumbers: true,

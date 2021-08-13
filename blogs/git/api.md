@@ -174,6 +174,15 @@ git commit --amend
 输入`:wq`，按回车键保存并退出  
 重新 git push 代码到远程仓库
 
+## 修改指定节点的 commit 信息
+
+1. `git log` 查看提交历史。
+2. 进入编辑界面，`git rebase -i [commitID]`。
+   > `commitID`为需要修改的节点 commit ID，比如要修改当前 commit ID 为 42c1a307bb，则执行`git rebase -i 42c1a307bb`，进入编辑界面。
+3. 找到需要修改的那一条 commit，将`pick`改成`edit`。保存并退出。
+4. 执行`git commit --amend`，修改 commit 信息。
+5. 执行`git rebase --continue`，直到全部完成。
+
 ## 清空当前分支 commit 信息
 
 ```
