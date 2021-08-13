@@ -1,6 +1,6 @@
 ---
 title: 如何开发一个NPM包
-date: 2021-08-13
+date: 2020-08-13
 tags:
   - NPM
 categories:
@@ -8,6 +8,8 @@ categories:
 ---
 
 ## 前端模块化概念
+
+进入正题之前，先初步了解一下几种常见的前端模块化概念。
 
 ### CommonJS
 
@@ -38,7 +40,7 @@ categories:
 全称`Universal Module Definition`，通用模块规范。
 UMD 将 CommonJS、AMD、CMD 等兼容处理
 
-```
+```js
 (function (global, factory) {
  typeof exports === 'object' && typeof module !== 'undefined'
      ? module.exports = factory()          // Node , CommonJS
@@ -55,11 +57,15 @@ UMD 将 CommonJS、AMD、CMD 等兼容处理
 - 使用`export`和`import`进行模块定义和引入。
 - 编译时加载。
 
-参考文档：[https://zhuanlan.zhihu.com/p/41568986](https://zhuanlan.zhihu.com/p/41568986)
+参考文档：<https://zhuanlan.zhihu.com/p/41568986>
+
+---
+
+接下来进入正题 >>>
 
 ## 准备
 
-1. 注册 NPM 账号。https://www.npmjs.com/
+1. 注册 NPM 账号。<https://www.npmjs.com>
 2. 本地登录 npm 账号。`npm login`
 3. 执行`npm whoami`，如果登录成功的话，会输出当前登录的用户名。
 
@@ -67,33 +73,44 @@ UMD 将 CommonJS、AMD、CMD 等兼容处理
 
 ### 1. NPM
 
-1. 创建一个空文件夹并进入，初始化 package.json 文件。
-   ```
+1. 创建一个空文件夹并进入。
+2. 初始化 package.json 文件。
+
+   ```bash
    npm init -y
    ```
-2. 编写代码。
-3. 发布
 
-   ```
+3. 修改 package.json 文件中的主要字段。
+
+   - name，当前包名。
+   - version，版本号。
+   - description，描述信息。
+   - main，入口文件。
+   - 等等...
+
+4. 编写逻辑代码。
+5. 发布
+
+   ```bash
    npm publish
    ```
 
-   执行`npm view xxx`可以查看当前 npm 包发布信息。
+   发布成功后，执行`npm view xxx`可以查看当前 npm 包发布信息。也可以登录<https://www.npmjs.com>查看已发布的包信息。
 
 ::: tip
 注意：
 
 npm 包命名时，为避免重名或者相似度过高导致引用错误，可以以`@私有空间名/包名`的格式设置包名。
 
-```
+```json
 {
-    "name": "@lee/utils"
+  "name": "@lee/utils"
 }
 ```
 
 该格式的包被默认为私有的，所有在发布时需要添加`--access=public`将其变为公有的包。
 
-```
+```bash
 npm publish --access=public
 ```
 
@@ -101,140 +118,131 @@ npm publish --access=public
 
 ### 2. Rollup
 
-有时候需要对 JS 代码进行编译打包后再进行发布，如果是纯 JS 工具函数库，建议使用 Rollup.js 进行打包。参考文档：[https://www.rollupjs.com/](https://www.rollupjs.com/)
+有时候需要对 JS 代码进行编译打包后再进行发布。
+
+如果是纯 JS 工具函数库，建议使用 Rollup.js 进行打包。参考文档：<https://www.rollupjs.com/>。
 
 1. 安装
 
-```
-npm i -g rollup
-```
+   ```bash
+   npm i -g rollup
+   ```
 
 2. 在项目根目录下创建`rollup.config.js`文件
 
-```
-// rollup.config.js
-export default{
-    input: "src/main.js", // 入口文件
-    output: {
-        file: "/lib/index.js", // 输出文件名
-        format: "umd", // 输出文件类型：cjs,amd,umd,esm,iife
-        name: "myUtils" // umd模式需要配置name属性，最终会挂载到window上。
-    }
-}
-```
+   ```js
+   // rollup.config.js
+   export default {
+     input: "src/main.js", // 入口文件
+     output: {
+       file: "/lib/index.js", // 输出文件名
+       format: "umd", // 输出文件类型：cjs,amd,umd,esm,iife
+       name: "myUtils", // umd模式需要配置name属性，最终会挂载到window上。
+     },
+   };
+   ```
 
-3. 执行编译命令
+3. 编写逻辑代码。
 
-```
-rollup -c
-```
+4. 执行编译命令
 
-`-c`代表执行 rollup.config.js 文件中的配置信息。
+   ```bash
+   rollup -c
+   ```
+
+   `-c`代表执行 rollup.config.js 文件中的配置信息。
+
+5. 修改 package.json。
+
+   因为编译输出的文件为`/lib/index.js`，所以需要把 package.json 文件的`main`字段值改为`"/lib/index.js"`。
+
+6. 执行`npm publish`发布包。
 
 ### 3. Webpack
 
-如果 rollup 不能满足需求，比如代码拆分、静态资源处理等，可以使用 webpack 代替。参考文档：[https://webpack.docschina.org/](https://webpack.docschina.org/)
+如果 rollup 不能满足需求，比如代码拆分、静态资源处理等，可以使用 webpack 代替。
+
+参考文档：<https://webpack.docschina.org/>
 
 1. 安装
 
-```
-npm install webpack webpack-cli --save-dev
-```
+   ```bash
+   npm install webpack webpack-cli --save-dev
+   ```
 
 2. 创建配置文件`webpack.config.js`
 
-```
-const path = require('path');
+   ```js
+   const path = require("path");
 
-module.exports = {
-  entry: './src/index.js',
-  output: {
-    filename: 'index.bundle.js',
-    path: path.resolve(__dirname, 'lib'),
-  },
-  module: {
-    rules: [
-      {
-        test: /\.css$/i,
-        use: ["style-loader", "css-loader"],
-      },
-    ],
-  },
-};
-```
+   module.exports = {
+     entry: "./src/index.js",
+     output: {
+       filename: "index.bundle.js",
+       path: path.resolve(__dirname, "lib"),
+     },
+     module: {
+       rules: [
+         {
+           test: /\.css$/i,
+           use: ["style-loader", "css-loader"],
+         },
+       ],
+     },
+   };
+   ```
 
 3. 执行编译命令
 
-```
-npx webpack
-```
+   ```bash
+   npx webpack
+   ```
 
-webpack 默认执行`webpack.config.js`文件中的配置信息，如果执行其他配置文件，可通过`npx webpack --config webpack.dev.config.js`执行指定配置文件。
+   webpack 默认执行`webpack.config.js`文件中的配置信息，如果执行其他配置文件，可通过`npx webpack --config webpack.dev.config.js`执行指定配置文件。
+
+4. 执行后续发布流程。
 
 ### 4. Vue CLI 库模式
 
-vue-cli 内置【应用】和【库】两种构建模式，参考文档：[https://cli.vuejs.org/zh/guide/build-targets.html#%E5%BA%93](https://cli.vuejs.org/zh/guide/build-targets.html#%E5%BA%93)
+vue-cli 内置【应用】和【库】两种构建模式，具体参考文档：<https://cli.vuejs.org/zh/guide/build-targets.html#%E5%BA%93>
 
-1. 创建项目
+使用库模式进行代码编译之后，使用上述 NPM 发布流程进行包发布。注意 package.json 文件的 `main` 字段配置。
 
-```
-vue create myPackages
-```
+---
 
-2. 执行编译命令
+上述 NPM 包发布流程可以满足基础发布操作，但是有很多不便之处，例如：
 
-```
-vue-cli-service build --target lib --name myLib [entry]
-```
+- 版本更新时，需要手动修改 package.json 的`version`字段。
+- 多个包协同开发时，互相依赖的包之间联调不方便。
+- 等等。。。
 
 ## Lerna 包管理
 
-Lerna 是一个管理工具，用于管理包含多个软件包（package）的 JavaScript 项目。文档地址：[https://lernajs.bootcss.com/](https://lernajs.bootcss.com/)
+Lerna 是一个包管理工具，用于管理包含多个软件包（package）的 JavaScript 项目。它可以解决刚才提到的包发布问题。
+
+文档地址：<https://lernajs.bootcss.com/>
 
 1. 安装
 
-```
-npm install lerna -g
-```
+   ```bash
+   npm install lerna -g
+   ```
 
-2. 初始化
+2. 创建一个目录，并进入。
 
-```
-lerna init
-```
+3. 初始化
 
-3. 发布 npm 包
+   ```bash
+   lerna init
+   ```
 
-```
-lerna publish
-```
+4. 编写逻辑代码。
+5. 发布 npm 包
+
+   ```bash
+   lerna publish
+   ```
 
 `lerna publish`会自动更新相关 package 的版本号，无需手动更改。并且会自动 push 代码到远程仓库。
 
-### 发布模式
-
-#### 统一模式
-
-所有的 NPM 包版本都以 lerna.json 中的 version 字段为准，一致更新。
-
-```js
-// lerna.json
-{
-    ...
-    "version": "1.0.0",
-    ...
-}
-```
-
-#### 独立模式
-
-每个 NPM 包根据各自的 package.json 版本号进行更新，互不影响。
-
-```js
-// lerna.json
-{
-    ...
-    "version": "independent",
-    ...
-}
-```
+Lerna 的详细使用参考 [Lerna 的使用](/blogs/tools/lerna.html)
