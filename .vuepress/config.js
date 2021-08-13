@@ -2,6 +2,11 @@ module.exports = {
   title: "willtfn",
   description: "lixiang的博客",
   dest: "dist",
+  locales: {
+    "/": {
+      lang: "zh-CN",
+    },
+  },
   head: [
     [
       "link",
@@ -49,7 +54,9 @@ module.exports = {
     },
     subSidebar: "auto",
     sidebar: {
-      "/blogs/git/": ["", "api"],
+      "/blogs/browser/": ["", "cache"],
+      "/blogs/git/": ["", "base", "api"],
+      "/blogs/javascript/": ["", "data-type", "const", "map-set"],
       "/blogs/npm/": ["", "api", "dev"],
     },
     type: "blog",

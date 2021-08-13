@@ -177,8 +177,8 @@ git commit --amend
 ## 修改指定节点的 commit 信息
 
 1. `git log` 查看提交历史。
-2. 进入编辑界面，`git rebase -i [commitID]`。
-   > `commitID`为需要修改的节点 commit ID，比如要修改当前 commit ID 为 42c1a307bb，则执行`git rebase -i 42c1a307bb`，进入编辑界面。
+2. 进入编辑界面，`git rebase -i HEAD~[n]`。
+   > `n`为需要修改的节点的顺序，比如要修改当前 HEAD 之前的第 3 次 commit 信息，则执行`git rebase -i HEAD~3`，进入编辑界面。
 3. 找到需要修改的那一条 commit，将`pick`改成`edit`。保存并退出。
 4. 执行`git commit --amend`，修改 commit 信息。
 5. 执行`git rebase --continue`，直到全部完成。
@@ -267,6 +267,8 @@ git reset --hard HEAD^
 ```
 git reset --hard [版本号]
 ```
+
+---
 
 参考：[史上最浅显易懂的 Git 教程！](https://www.liaoxuefeng.com/wiki/896043488029600)
 
