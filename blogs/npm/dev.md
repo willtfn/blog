@@ -61,6 +61,7 @@ UMD 将 CommonJS、AMD、CMD 等兼容处理
 
 1. 注册 NPM 账号。https://www.npmjs.com/
 2. 本地登录 npm 账号。`npm login`
+3. 执行`npm whoami`，如果登录成功的话，会输出当前登录的用户名。
 
 ## 实现方案
 
@@ -68,12 +69,9 @@ UMD 将 CommonJS、AMD、CMD 等兼容处理
 
 1. 创建一个空文件夹并进入，初始化 package.json 文件。
    ```
-   npm init
+   npm init -y
    ```
-2. 查看当前 npm 账号。
-   ```
-   npm whoami
-   ```
+2. 编写代码。
 3. 发布
 
    ```
@@ -82,7 +80,10 @@ UMD 将 CommonJS、AMD、CMD 等兼容处理
 
    执行`npm view xxx`可以查看当前 npm 包发布信息。
 
-==【注】== npm 包命名时，为避免重名或者相似度过高导致引用错误，可以以`@私有空间名/包名`的格式设置包名。
+::: tip
+注意：
+
+npm 包命名时，为避免重名或者相似度过高导致引用错误，可以以`@私有空间名/包名`的格式设置包名。
 
 ```
 {
@@ -93,8 +94,10 @@ UMD 将 CommonJS、AMD、CMD 等兼容处理
 该格式的包被默认为私有的，所有在发布时需要添加`--access=public`将其变为公有的包。
 
 ```
-npm publish --access=publish
+npm publish --access=public
 ```
+
+:::
 
 ### 2. Rollup
 

@@ -54,20 +54,21 @@ module.exports = {
     },
     subSidebar: "auto",
     sidebar: {
-      "/blogs/browser/": ["", "cache"],
-      "/blogs/git/": ["", "base", "api"],
-      "/blogs/javascript/": ["", "data-type", "const", "map-set"],
-      "/blogs/npm/": ["", "api", "dev"],
+      "/blogs/browser/": [{ title: "浏览器", children: ["cache"] }],
+      "/blogs/git/": [{ title: "Git", children: ["base", "api"] }],
+      "/blogs/javascript/": [
+        { title: "JavaScript", children: ["data-type", "const", "map-set"] },
+      ],
+      "/blogs/npm/": [{ title: "NPM", children: ["api", "dev"] }],
     },
     type: "blog",
-    friendLink: [
-      // {
-      //   "title": "vuepress-theme-reco",
-      //   "desc": "A simple and beautiful vuepress Blog & Doc theme.",
-      //   "avatar": "https://vuepress-theme-reco.recoluan.com/icon_vuepress_reco.png",
-      //   "link": "https://vuepress-theme-reco.recoluan.com"
-      // }
-    ],
+    // friendLink: [
+    //   {
+    //     title: "willtfn@163.com",
+    //     email: "willtfn@163.com",
+    //     logo: "reco-mail",
+    //   },
+    // ],
     logo: "/logo.png",
     search: true,
     searchMaxSuggestions: 10,
