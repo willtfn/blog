@@ -59,6 +59,7 @@ module.exports = {
       "/blogs/javascript/": [
         { title: "JavaScript", children: ["data-type", "const", "map-set"] },
       ],
+      "/blogs/network/": [{ title: "计算机网络", children: ["base"] }],
       "/blogs/npm/": [{ title: "NPM", children: ["api", "dev"] }],
       "/blogs/tools/": [{ title: "工具", children: ["lerna"] }],
     },
