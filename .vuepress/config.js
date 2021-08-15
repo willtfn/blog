@@ -40,7 +40,7 @@ module.exports = {
           { text: "JavaScript", link: "/categories/JavaScript/" },
           { text: "Linux", link: "/categories/Linux/" },
           { text: "NPM", link: "/categories/NPM/" },
-          { text: "Tools", link: "/categories/Tools/" },
+          { text: "工具", link: "/categories/工具/" },
           { text: "浏览器", link: "/categories/浏览器/" },
           { text: "计算机网络", link: "/categories/计算机网络/" },
         ],
@@ -51,7 +51,7 @@ module.exports = {
         icon: "reco-tag",
       },
       {
-        text: "时光轴",
+        text: "归档",
         link: "/timeline/",
         icon: "reco-date",
       },
@@ -61,6 +61,16 @@ module.exports = {
         icon: "reco-github",
       },
     ],
+    sidebar: {
+      "/blogs/git/": [{ title: "Git", children: ["base", "api"] }],
+      "/blogs/javascript/": [
+        { title: "JavaScript", children: ["data-type", "const", "map-set"] },
+      ],
+      "/blogs/npm/": [{ title: "NPM", children: ["api", "dev"] }],
+      "/blogs/tools/": [{ title: "工具", children: ["links", "lerna"] }],
+      "/blogs/browser/": [{ title: "浏览器", children: ["cache"] }],
+      "/blogs/network/": [{ title: "计算机网络", children: ["base"] }],
+    },
     // blogConfig: {
     //   tag: {
     //     location: 3,
@@ -69,16 +79,6 @@ module.exports = {
     //   },
     // },
     subSidebar: "auto",
-    sidebar: {
-      "/blogs/browser/": [{ title: "浏览器", children: ["cache"] }],
-      "/blogs/git/": [{ title: "Git", children: ["base", "api"] }],
-      "/blogs/javascript/": [
-        { title: "JavaScript", children: ["data-type", "const", "map-set"] },
-      ],
-      "/blogs/network/": [{ title: "计算机网络", children: ["base"] }],
-      "/blogs/npm/": [{ title: "NPM", children: ["api", "dev"] }],
-      "/blogs/tools/": [{ title: "工具", children: ["lerna"] }],
-    },
     type: "blog",
     // friendLink: [
     //   {
@@ -100,7 +100,7 @@ module.exports = {
     lineNumbers: true,
     extendMarkdown: (md) => {
       // 使用更多的 markdown-it 插件!
-      md.use(require("markdown-it-sup"));
+      md.use(require("markdown-it-sup")).use(require("markdown-it-sub"));
     },
   },
 };

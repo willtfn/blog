@@ -12,6 +12,7 @@
   },
   "description": "lixiang的博客",
   "dependencies": {
+    "markdown-it-sub": "^1.0.0",
     "markdown-it-sup": "^1.0.0"
   }
 }

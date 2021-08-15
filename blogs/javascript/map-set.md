@@ -1,6 +1,6 @@
 ---
-title: JavaScript中的Map、Set、WeakMap、WeakSet
-date: 2018-07-20
+title: JavaScript中的Map、Set
+date: 2019-07-20
 tags:
   - JavaScript
   - Map

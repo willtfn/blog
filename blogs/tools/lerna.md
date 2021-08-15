@@ -5,7 +5,7 @@ date: 2020-10-11
 tags:
   - Lerna
 categories:
-  - Tools
+  - 工具
 ---
 
 ## 发布模式
