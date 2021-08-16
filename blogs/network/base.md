@@ -2,6 +2,7 @@
 title: 计算机网络基础
 date: 2021-08-14
 tags:
+  - 读书笔记
   - 计算机网络
   - DNS
   - HTTP
@@ -46,7 +47,7 @@ categories:
 
 OSI 的七层协议体系结构的概念清楚，理论也较完整，但它既复杂又不实用。而 TCP/IP 的四层体系结构已经得到了非常广泛的应用。为了方便学习，采用折中的方法，综合 OSI 和 TCP/IP 的优点，采用一种只有五层协议的体系结构。如下图所示：
 
-<img src="./images/base_jiegou_1.png" style="max-width: 80%;" />
+<img src="./images/base_jiegou_1.png" style="max-width: 60%;" />
 
 1. 应用层
 
@@ -100,7 +101,7 @@ OSI 的七层协议体系结构的概念清楚，理论也较完整，但它既�
 
 ### 点对点信道
 
-<img src="./images/base_lianlu_1.png" style="max-width: 80%;" />
+<img src="./images/base_lianlu_1.png" style="max-width: 60%;" />
 
 点对点信道的数据链路层在进行通信时的主要步骤如下：
 
@@ -144,7 +145,7 @@ IP 地址点分十进制的记法：
 
 划分子网的方法是从网络的主机号借用若干位作为子网号 subnet-id，当然主机号也就相应减少了同样的位数。于是两级 IP 地址在本单位内部就变为三级 IP 地址：**网络号**、**子网号**和**主机号**。凡是从其他网络发送给本单位某个主机的 IP 数据报，仍然是根据 IP 数据报的目的网络号找到连接在本单位网络上的路由器。但此路由器在收到 IP 数据报后，再按目的网络号和子网号找到目的子网，把 IP 数据报交付目的主机。
 
-<img src="./images/base_wangluo_ip5.png" style="max-width: 80%;" />
+<img src="./images/base_wangluo_ip5.png" style="max-width: 60%;" />
 
 如图所示：
 
@@ -166,7 +167,7 @@ IP 地址放在 IP 数据报的首部，而硬件地址则放在 MAC 帧的首�
 
 在 TCP/IP 的标准中，各种数据格式常常以 32 位(即 4 字节)为单位来描述。下图是 IP 数据报的完整格式。
 
-<img src="./images/base_wangluo_ip4.png" style="max-width: 80%;" />
+<img src="./images/base_wangluo_ip4.png" style="max-width: 60%;" />
 
 IP 数据报分为首部和数据两部分。首部的前一部分是固定长度，共 20 字节，是所有 IP 数据报必须具有的（源地址、目的地址、总长度等重要字段都在固定首部中）。一些长度可变的可选字段放在固定首部的后面。
 

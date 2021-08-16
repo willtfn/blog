@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "author": "lixiang",
   "scripts": {
-    "dev": "vuepress dev .",
+    "start": "vuepress dev .",
     "build": "vuepress build ."
   },
   "devDependencies": {
