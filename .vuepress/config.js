@@ -68,7 +68,9 @@ module.exports = {
       ],
       "/blogs/npm/": [{ title: "NPM", children: ["api", "dev"] }],
       "/blogs/tools/": [{ title: "工具", children: ["links", "lerna"] }],
-      "/blogs/browser/": [{ title: "浏览器", children: ["base", "cache"] }],
+      "/blogs/browser/": [
+        { title: "浏览器", children: ["base", "cache", "garbage-collection"] },
+      ],
       "/blogs/network/": [{ title: "计算机网络", children: ["base"] }],
     },
     // blogConfig: {
