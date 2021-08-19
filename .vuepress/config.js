@@ -50,11 +50,11 @@ module.exports = {
         link: "/tag/",
         icon: "reco-tag",
       },
-      {
-        text: "归档",
-        link: "/timeline/",
-        icon: "reco-date",
-      },
+      // {
+      //   text: "归档",
+      //   link: "/timeline/",
+      //   icon: "reco-date",
+      // },
       {
         text: "GitHub",
         link: "https://github.com/willtfn/blog",
