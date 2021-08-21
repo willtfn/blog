@@ -80,6 +80,7 @@ module.exports = {
     //     icon: "reco-sticky",
     //   },
     // },
+    plugins: ["@vuepress/medium-zoom"],
     subSidebar: "auto",
     type: "blog",
     // friendLink: [
