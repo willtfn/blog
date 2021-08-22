@@ -10,6 +10,4 @@ categories:
 
 **什么是垃圾回收？**
 
-JavaScript 中数据类型分为两类：原始类型、引用类型。具体参考 [JavaScript 中的数据类型](/blogs/javascript/data-type.html)。
-
-原始类型数据存放在栈中，引用类型数据存放在堆中。
+首先了解一下堆栈的概念，👉 [JavaScript 中的堆栈](/blogs/javascript/heap-stack.html)

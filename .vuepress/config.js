@@ -2,27 +2,6 @@ module.exports = {
   title: "willtfn",
   description: "lixiang的博客",
   dest: "dist",
-  locales: {
-    "/": {
-      lang: "zh-CN",
-    },
-  },
-  head: [
-    [
-      "link",
-      {
-        rel: "icon",
-        href: "/favicon.ico",
-      },
-    ],
-    [
-      "meta",
-      {
-        name: "viewport",
-        content: "width=device-width,initial-scale=1,user-scalable=no",
-      },
-    ],
-  ],
   theme: "reco",
   themeConfig: {
     nav: [
@@ -83,7 +62,10 @@ module.exports = {
     //     icon: "reco-sticky",
     //   },
     // },
-    plugins: ["@vuepress/medium-zoom"],
+
+    plugins: [
+      ["@vuepress/medium-zoom"], // 图片预览
+    ],
     subSidebar: "auto",
     type: "blog",
     // friendLink: [
@@ -96,6 +78,27 @@ module.exports = {
     logo: "/logo.png",
     search: true,
     searchMaxSuggestions: 10,
+    locales: {
+      "/": {
+        lang: "zh-CN",
+      },
+    },
+    head: [
+      [
+        "link",
+        {
+          rel: "icon",
+          href: "/favicon.ico",
+        },
+      ],
+      [
+        "meta",
+        {
+          name: "viewport",
+          content: "width=device-width,initial-scale=1,user-scalable=no",
+        },
+      ],
+    ],
     lastUpdated: "Last Updated",
     author: "lixiang",
     authorAvatar: "/avatar.jpg",
