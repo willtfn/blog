@@ -4,6 +4,8 @@ description: JavaScript的包管理工具
 date: 2020-10-11
 tags:
   - Lerna
+  - NPM
+  - 工具
 categories:
   - 工具
 ---

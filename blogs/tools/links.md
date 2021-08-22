@@ -9,7 +9,9 @@ categories:
 
 ## emoji
 
-<https://github.com/markdown-it/markdown-it-emoji/blob/master/lib/data/full.json>
+[emoji 图标对应字符](https://github.com/markdown-it/markdown-it-emoji/blob/master/lib/data/full.json)
+
+[emoji 图标直接复制](https://emojipedia.org/)
 
 ## Markdown
 

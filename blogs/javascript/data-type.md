@@ -30,7 +30,7 @@ categories:
 
 ## 如何判断数据类型
 
-#### typeof
+### typeof
 
 - `typeof true` => `"boolean"`
 - `typeof 'abc'` => `"string"`
@@ -43,11 +43,11 @@ categories:
 - `typeof new Date()` => `"object"`
 - `typeof new Function()` => `"function"`
 
-#### instance of
+### instance of
 
 instanceof 运算符用于检测构造函数的 `prototype` 属性是否出现在某个实例对象的原型链上。
 
-#### Object.prototype.toString.call()
+### Object.prototype.toString.call()
 
 - `Object.prototype.toString.call(true)` => `"[object Boolean]"`
 - `Object.prototype.toString.call('abc')` => `"[object String]"`

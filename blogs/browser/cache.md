@@ -11,7 +11,6 @@ categories:
 ## 介绍
 
 前端缓存、HTTP 缓存、内存缓存、强缓存、协商缓存、Cache-Control、ETag 等等，这些都是啥，有什么关系和区别？一脸懵逼。。
-![image.png](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/718455d2b45b4cdbaa99b1ecbead2694~tplv-k3u1fbpfcp-watermark.image)
 
 那就从浏览器打开一个网页说起吧。
 
@@ -24,7 +23,7 @@ categories:
 
 ### 1. Service Worker
 
-Service Worker 是运行在浏览器背后的独立线程，一般可以用来实现缓存功能。使用 Service Worker 的话，传输协议必须为 HTTPS。Service Worker 目前使用的不多，暂时不详细研究。参考 [Service Worker API - Web API 接口参考 | MDN (mozilla.org)](https://developer.mozilla.org/zh-CN/docs/Web/API/Service_Worker_API) 。
+Service Worker 是运行在浏览器背后的独立线程，一般可以用来实现缓存功能。使用 Service Worker 的话，传输协议必须为 HTTPS。Service Worker 目前使用的不多，暂时不详细研究。参考 [Service Worker API - Web API 接口参考 | MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/Service_Worker_API) 。
 
 ### 2. Memory Cache
 
@@ -133,47 +132,53 @@ Expires 是 http1.0 的产物，Cache-Control 是 http1.1 的产物，两者同�
 
 强制缓存优先于协商缓存进行，若强制缓存(`Expires`和`Cache-Control`)生效则直接使用缓存，若不生效则进行协商缓存(`Last-Modified` / `If-Modified-Since`和`Etag` / `If-None-Match`)，协商缓存由服务器决定是否使用缓存，若协商缓存失效，那么代表该请求的缓存失效，返回 200，重新返回资源和缓存标识，再存入浏览器缓存中；生效则返回 304，继续使用缓存。
 
-> 如果什么缓存策略都没设置，那么浏览器会怎么处理？
->
-> 对于这种情况，浏览器会采用一个启发式的算法，通常会取响应头中的 Date 减去 Last-Modified 值的 10% 作为缓存时间。
+:::warning
+如果什么缓存策略都没设置，那么浏览器会怎么处理？
+
+对于这种情况，浏览器会采用一个启发式的算法，通常会取响应头中的 Date 减去 Last-Modified 值的 10% 作为缓存时间。
+:::
 
 ## 实际场景中缓存最佳实践
 
 1. index.html 不做缓存，每次请求都获取最新版本。
 2. js、css 和图片等资源文件做强缓存处理（可以设置一个月、或者一年）。使用 Webpack 等前端构建工具，对资源文件名增加 hash 处理。
 
-> 为什么不给 index.html 做强缓存？
->
-> 因为现在大部分系统都是单页面应用，index.html 是所有资源的入口，如果 index.html 被强缓存，那么就无法获取最新的资源文件，导致整个系统无法正常更新。
+:::warning
+为什么不给 index.html 做强缓存？
 
-> 为什么其他资源文件就可以设置强缓存？
->
-> 因为其他资源经过前端构建工具打包之后，生成的文件名都带有特殊的 hash 值。每次重新 build 都会生成一批新的带有 hash 值的资源文件名。例如：index.de62f314.js。
->
-> 当部署新的前端项目文件到服务器后，浏览器请求 index.html 后发现相关的资源文件名称都发生了变化，就会重新请求新的资源。
+因为现在大部分系统都是单页面应用，index.html 是所有资源的入口，如果 index.html 被强缓存，那么就无法获取最新的资源文件，导致整个系统无法正常更新。
+:::
+
+:::warning
+为什么其他资源文件就可以设置强缓存？
+
+因为其他资源经过前端构建工具打包之后，生成的文件名都带有特殊的 hash 值。每次重新 build 都会生成一批新的带有 hash 值的资源文件名。例如：index.de62f314.js。
+
+当部署新的前端项目文件到服务器后，浏览器请求 index.html 后发现相关的资源文件名称都发生了变化，就会重新请求新的资源。
+:::
 
 ## 如何设置缓存
 
 ### 在 html 中设置 meta 信息
 
-```
-<meta http-equiv="Cache-Control" content="max-age=31536000" />
+```html
+<meta http-equiv="Cache-Control" content="max-age=31536000" />
 ```
 
 ### 在服务端设置响应头
 
-```
-res.setHeader('Cache-Control', 'public, max-age=31536000')
+```js
+res.setHeader("Cache-Control", "public, max-age=31536000");
 ```
 
 ## 如何禁用缓存
 
 ### 在 html 中设置 meta 信息
 
-```
-<meta http-equiv="pragma" content="no-cache">
-<meta http-equiv="cache-control" content="no-cache">
-<meta http-equiv="expires" content="0">
+```html
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="expires" content="0" />
 ```
 
 ## 用户行为对浏览器缓存的影响

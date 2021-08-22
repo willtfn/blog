@@ -64,7 +64,10 @@ module.exports = {
     sidebar: {
       "/blogs/git/": [{ title: "Git", children: ["base", "api"] }],
       "/blogs/javascript/": [
-        { title: "JavaScript", children: ["data-type", "const", "map-set"] },
+        {
+          title: "JavaScript",
+          children: ["data-type", "const", "map-set", "heap-stack"],
+        },
       ],
       "/blogs/npm/": [{ title: "NPM", children: ["api", "dev"] }],
       "/blogs/tools/": [{ title: "工具", children: ["links", "lerna"] }],
