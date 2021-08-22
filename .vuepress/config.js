@@ -65,6 +65,7 @@ module.exports = {
 
     plugins: [
       ["@vuepress/medium-zoom"], // 图片预览
+      ["vuepress-plugin-code-copy", true],
     ],
     subSidebar: "auto",
     type: "blog",
