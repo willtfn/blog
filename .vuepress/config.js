@@ -2,6 +2,11 @@ module.exports = {
   title: "willtfn",
   description: "lixiang的博客",
   dest: "dist",
+  locales: {
+    "/": {
+      lang: "zh-CN",
+    },
+  },
   theme: "reco",
   themeConfig: {
     nav: [
@@ -79,11 +84,6 @@ module.exports = {
     logo: "/logo.png",
     search: true,
     searchMaxSuggestions: 10,
-    locales: {
-      "/": {
-        lang: "zh-CN",
-      },
-    },
     head: [
       [
         "link",
@@ -103,8 +103,9 @@ module.exports = {
     lastUpdated: "Last Updated",
     author: "lixiang",
     authorAvatar: "/avatar.jpg",
-    record: "xxxx",
-    startYear: "2019",
+    record: "粤ICP备2021117388号",
+    recordLink: "http://beian.miit.gov.cn/",
+    startYear: "2020",
   },
   markdown: {
     lineNumbers: true,

@@ -13,7 +13,7 @@ sticky: 1
 
 - [浏览器工作原理](/blogs/browser/base.html) ✅
 - [前端缓存](/blogs/browser/cache.html) ✅
-- [浏览器垃圾回收](/blogs/browser/garbage-collection.html) ⏳
+- [浏览器垃圾回收](/blogs/browser/garbage-collection.html) ✍🏻
 
 ## HTML/CSS
 
@@ -26,7 +26,8 @@ sticky: 1
 - [JavaScript 中的数据类型](/blogs/javascript/data-type.html) ✅
 - [JavaScript 中的 var、let、const](/blogs/javascript/const.html) ✅
 - [JavaScript 中的 Map、Set](/blogs/javascript/map-set.html) ✅
-- [JavaScript 中的堆栈](/blogs/javascript/heap-stack.html) ⏳
+- [JavaScript 词法解析](/blogs/javascript/ast.html) ✍🏻
+- [JavaScript 中的堆栈](/blogs/javascript/heap-stack.html) ✍🏻
 
 ## 前端开发框架
 
