@@ -1,9 +1,13 @@
 ---
-title: JavaScript 词法解析
+title: JavaScript AST抽象语法树
 date: 2021-08-25
 tags:
   - JavaScript
-  - 词法解析
+  - AST
 categories:
   - JavaScript
 ---
+
+```javascript
+ast;
+```

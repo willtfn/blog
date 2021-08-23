@@ -50,7 +50,7 @@ module.exports = {
       "/blogs/javascript/": [
         {
           title: "JavaScript",
-          children: ["data-type", "const", "map-set", "heap-stack"],
+          children: ["data-type", "const", "map-set", "ast", "heap-stack"],
         },
       ],
       "/blogs/npm/": [{ title: "NPM", children: ["api", "dev"] }],
@@ -68,10 +68,6 @@ module.exports = {
     //   },
     // },
 
-    plugins: [
-      ["@vuepress/medium-zoom"], // 图片预览
-      ["vuepress-plugin-code-copy", true],
-    ],
     subSidebar: "auto",
     type: "blog",
     // friendLink: [
@@ -107,8 +103,19 @@ module.exports = {
     recordLink: "http://beian.miit.gov.cn/",
     startYear: "2020",
   },
+  plugins: {
+    "@vuepress/medium-zoom": {
+      selector: ".theme-reco-content:not(a) img",
+    },
+    "vuepress-plugin-nuggets-style-copy": {
+      copyText: "复制代码",
+      tip: {
+        content: "复制成功!",
+      },
+    },
+  },
   markdown: {
-    lineNumbers: true,
+    lineNumbers: false,
     extendMarkdown: (md) => {
       // 使用更多的 markdown-it 插件!
       md.use(require("markdown-it-sup")).use(require("markdown-it-sub"));

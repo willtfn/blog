@@ -3,14 +3,14 @@
   "version": "1.0.0",
   "author": "lixiang",
   "scripts": {
-    "start": "vuepress dev .",
+    "dev": "vuepress dev .",
     "build": "vuepress build ."
   },
   "devDependencies": {
     "markdown-it-sub": "^1.0.0",
     "markdown-it-sup": "^1.0.0",
     "vuepress": "1.8.2",
-    "vuepress-plugin-code-copy": "^1.0.6",
+    "vuepress-plugin-nuggets-style-copy": "^1.0.3",
     "vuepress-theme-reco": "1.6.6"
   },
   "description": "lixiang的博客"
