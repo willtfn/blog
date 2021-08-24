@@ -28,6 +28,7 @@ sticky: 1
 - [JS 中的 Map、Set](/blogs/javascript/map-set.html) ✅
 - [JS 抽象语法树](/blogs/javascript/ast.html) ✅
 - [JS 中的堆栈](/blogs/javascript/heap-stack.html) ✍🏻
+- [JS 是怎么执行的]
 
 ## 前端开发框架
 
@@ -48,14 +49,22 @@ sticky: 1
 
 ## 工具
 
-- [常用网站](/blogs/tools/links.html) ✅
+### Git
+
 - [Git 基础知识](/blogs/git/base.html) ✅
 - [Git 常用命令](/blogs/git/api.html) ✅
-- [NPM 常用命令](/blogs/npm/api.html)
+
+### NPM
+
+- [NPM 常用命令]
 - [如何开发一个 NPM 包](/blogs/npm/dev.html) ✅
+
+### 其他
+
 - [Rollup]
 - [Webpack]
 - [Lerna 的使用](/blogs/tools/lerna.html)
 - [Vite]
 - [Linux]
 - [Docker]
+- [常用网站](/blogs/tools/links.html) ✅

@@ -53,7 +53,7 @@ module.exports = {
           children: ["data-type", "const", "map-set", "ast", "heap-stack"],
         },
       ],
-      "/blogs/npm/": [{ title: "NPM", children: ["api", "dev"] }],
+      "/blogs/npm/": [{ title: "NPM", children: ["dev"] }],
       "/blogs/tools/": [{ title: "工具", children: ["links", "lerna"] }],
       "/blogs/browser/": [
         { title: "浏览器", children: ["base", "cache", "garbage-collection"] },

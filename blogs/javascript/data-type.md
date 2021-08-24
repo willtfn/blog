@@ -11,22 +11,25 @@ categories:
 
 最新的 ECMAScript 标准定义了 8 种数据类型：
 
-- 七种基本类型：
-  - boolean
-  - string
-  - number
-  - null
-  - undefined
-  - symbol （ES2015）
-  - bigint （ES2020）
-- Object 复合类型
-  - Array
-  - Function
-  - Date
-  - RegExp
-  - Map
-  - Set
-  - ...
+### 七种基本类型
+
+- boolean
+- string
+- number
+- null
+- undefined
+- symbol （ES2015）
+- bigint （ES2020）
+
+### Object 复合类型
+
+- Array
+- Function
+- Date
+- RegExp
+- Map
+- Set
+- ...
 
 ## 如何判断数据类型
 
