@@ -1,5 +1,5 @@
 ---
-title: JavaScript中的var、let、const
+title: JS 中的var、let、const
 date: 2018-07-14
 tags:
   - JavaScript

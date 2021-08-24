@@ -1,5 +1,5 @@
 ---
-title: JavaScript中的数据类型
+title: JS 中的数据类型
 date: 2018-07-14
 tags:
   - JavaScript
