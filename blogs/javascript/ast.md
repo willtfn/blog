@@ -20,6 +20,7 @@ categories:
 - IDE 的错误提示、代码格式化、代码高亮、代码自动补全等。
 - webpack、rollup 进行代码打包。
 - Babel 将 TypeScript、JSX 等转化为原生 Javascript。
+- 代码优化。
 - ......
 
 ## 如何生成 AST
@@ -51,7 +52,7 @@ AST 的生成经历两个阶段：
 var a = 0;
 ```
 
-经过词法分析转换成 Tokens 列表
+经过词法分析转换成 Tokens 列表。
 
 ```json
 // 简化版
@@ -108,9 +109,13 @@ var a = 0;
 }
 ```
 
-转换的过程中，JS 引擎将 var 变量声明和函数声明等放到执行上下文的变量环境中（作用域）。**变量提升**就发生在这个阶段。
+生成 AST 的同时，JS 引擎将 var 变量声明和函数声明等放到执行上下文的变量环境中（作用域）。**变量提升**就发生在这个阶段。
 
-生成了作用域和 AST 之后，JS 引擎依据它们来生成字节码，然后由解释器 Ignition 来执行。
+生成了作用域和 AST 之后，JS 引擎的**解释器 Ignition**依据它们来生成字节码。
+
+## V8 引擎
+
+![V8引擎](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/42e5a468152d45529f9988c976384863~tplv-k3u1fbpfcp-watermark.awebp)
 
 ---
 
