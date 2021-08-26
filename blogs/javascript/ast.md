@@ -9,6 +9,8 @@ categories:
   - JavaScript
 ---
 
+JS 代码由接
+
 ## 什么是抽象语法树
 
 抽象语法树（Abstract Syntax Tree，AST），是源代码语法结构的一种抽象表示。它以树状的形式表现编程语言的语法结构，树上的每个节点都表示源代码中的一种结构。
@@ -114,8 +116,6 @@ var a = 0;
 生成了作用域和 AST 之后，JS 引擎的**解释器 Ignition**依据它们来生成字节码。
 
 ## V8 引擎
-
-![V8引擎](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/42e5a468152d45529f9988c976384863~tplv-k3u1fbpfcp-watermark.awebp)
 
 ---
 

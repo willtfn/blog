@@ -49,8 +49,12 @@ module.exports = {
       "/blogs/git/": [{ title: "Git", children: ["base", "api"] }],
       "/blogs/javascript/": [
         {
-          title: "JavaScript",
-          children: ["data-type", "const", "map-set", "ast", "heap-stack"],
+          title: "JavaScript基础",
+          children: ["data-type", "const", "map-set"],
+        },
+        {
+          title: "JavaScript运行原理",
+          children: ["V8", "heap-stack", "ast"],
         },
       ],
       "/blogs/npm/": [{ title: "NPM", children: ["dev"] }],
