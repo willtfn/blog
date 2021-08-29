@@ -48,13 +48,12 @@ module.exports = {
     sidebar: {
       "/blogs/git/": [{ title: "Git", children: ["base", "api"] }],
       "/blogs/javascript/": [
-        {
-          title: "JavaScript基础",
-          children: ["data-type", "const", "map-set"],
-        },
+        "data-type",
+        "const",
+        "map-set",
         {
           title: "JavaScript运行原理",
-          children: ["V8", "heap-stack", "ast"],
+          children: ["V8", "ast", "heap-stack", "execution-context"],
         },
       ],
       "/blogs/npm/": [{ title: "NPM", children: ["dev"] }],

@@ -1,10 +1,9 @@
 ---
-title: JS 堆栈和内存
+title: JS 堆栈
 date: 2021-08-22
 tags:
   - JavaScript
   - 堆栈
-  - 内存
 categories:
   - JavaScript
 ---
@@ -25,8 +24,6 @@ categories:
 
   JS 中[数据类型](/blogs/javascript/data-type.html)分为两类：原始类型(基本类型)、引用类型(复合类型)。原始类型存储在栈内存，引用类型存储在堆内存。
 
-  在 JS 执行过程中，原始类型的变量就存储在栈内存中。
-
 - 提供 JS 代码执行环境
 
   JS 代码执行的时候会按顺序进栈执行，执行完毕后出栈。
@@ -37,9 +34,11 @@ categories:
 
 ## 堆（Heap）
 
-### 堆内存
+堆内存存放引用类型数据，比如数组、对象、方法等。存储的数据大小一般都是未知的，在运行时才进行内存分配。
 
-- 存放引用类型数据，比如数组、对象、方法等。
+<img src="./images/heap_stack_02.png" style="max-width:300px;"/>
+
+了解堆栈的概念之后，开始步入 JS 代码执行正题。 👉 [JS 执行上下文](/blogs/javascript/execution-context.html)
 
 ---
 
