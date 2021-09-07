@@ -55,7 +55,7 @@ module.exports = {
         "map-set",
         {
           title: "JavaScript运行原理",
-          children: ["V8", "ast", "heap-stack", "execution-context"],
+          children: ["V8", "heap-stack", "execution-context", "ast"],
         },
       ],
       "/blogs/npm/": [{ title: "NPM", children: ["dev"] }],

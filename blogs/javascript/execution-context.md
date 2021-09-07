@@ -29,7 +29,7 @@ JS 中有三种执行上下文：
 2. 函数执行上下文
 3. eval 执行上下文
 
-[示例代码](/blogs/javascript/V8.html#示例代码) 的执行上下文图示：
+执行上下文图示：
 
 ![EC](./images/EC_01.png)
 
