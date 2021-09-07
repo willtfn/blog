@@ -20,6 +20,7 @@ module.exports = {
         link: "/categories/",
         icon: "reco-category",
         items: [
+          { text: "CSS", link: "/categories/css/" },
           { text: "Git", link: "/categories/Git/" },
           { text: "JavaScript", link: "/categories/JavaScript/" },
           { text: "Linux", link: "/categories/Linux/" },
@@ -46,6 +47,7 @@ module.exports = {
       },
     ],
     sidebar: {
+      "/blogs/css/": [{ title: "CSS", children: ["platform"] }],
       "/blogs/git/": [{ title: "Git", children: ["base", "api"] }],
       "/blogs/javascript/": [
         "data-type",
